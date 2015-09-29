@@ -2,7 +2,7 @@ package my.learn.thrift.domo;
 
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.TServer;
-import org.apache.thrift.server.TSimpleServer;
+import org.apache.thrift.server.TThreadPoolServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TTransportException;
 
@@ -22,15 +22,18 @@ public class HelloServerDemo {
 
   public void startServer(){
     System.out.println("Hello World Thrift Simple Server start ...");
-    HelloWorldService.Processor<HelloWorldService.Iface> tprocessor = new HelloWorldService.Processor<HelloWorldService.Iface>(new HelloWorldImpl());
 
     try {
+      //设置服务端口号
       TServerSocket serverTransport = new TServerSocket(SERVER_PORT);
-      TServer.Args tArgs = new TServer.Args(serverTransport);
+      TThreadPoolServer.Args tArgs = new TThreadPoolServer.Args(serverTransport);
+      //设置服务实现
+      HelloWorldService.Processor<HelloWorldService.Iface> tprocessor = new HelloWorldService.Processor<HelloWorldService.Iface>(new HelloWorldImpl());
       tArgs.processor(tprocessor);
+      //设置协议工厂
       tArgs.protocolFactory(new TCompactProtocol.Factory());
 
-      TServer server = new TSimpleServer(tArgs);
+      TServer server = new TThreadPoolServer(tArgs);
       server.serve();
     } catch (TTransportException e) {
       System.out.println("Server start error !!!");
