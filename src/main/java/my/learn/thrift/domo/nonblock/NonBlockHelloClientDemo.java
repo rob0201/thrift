@@ -1,32 +1,29 @@
-package my.learn.thrift.domo;
+package my.learn.thrift.domo.nonblock;
 
+import my.learn.thrift.domo.HelloWorldService;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
+import org.apache.thrift.transport.TFramedTransport;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
-
 
 /**
  * Desc:
  * Author:zhangxiaowei03
  * Date: 15/9/29
- * Time: 下午2:27
+ * Time: 下午4:34
  */
-public class HelloClientDemo {
-
-  public static final String SERVER_IP = "localhost";
-  public static final int SERVER_PORT = 8090;
-  public static final int TIMEOUT = 30000;
+public class NonBlockHelloClientDemo {
 
   public static void main(String[] args) {
-    HelloClientDemo client = new HelloClientDemo();
-    client.startClient("username");
+    NonBlockHelloClientDemo clientDemo = new NonBlockHelloClientDemo();
+    clientDemo.startClient("username");
   }
 
   public void startClient(String username){
-    TTransport transport = new TSocket(SERVER_IP,SERVER_PORT,TIMEOUT);
+    TTransport transport = new TFramedTransport(new TSocket("localhost",10005,30000));
     TProtocol protocol = new TCompactProtocol(transport);
     HelloWorldService.Client client = new  HelloWorldService.Client(protocol);
     try {

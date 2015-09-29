@@ -1,5 +1,7 @@
-package my.learn.thrift.domo;
+package my.learn.thrift.domo.block;
 
+import my.learn.thrift.domo.HelloWorldImpl;
+import my.learn.thrift.domo.HelloWorldService;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TThreadPoolServer;
