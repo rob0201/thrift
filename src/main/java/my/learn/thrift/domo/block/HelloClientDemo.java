@@ -34,6 +34,7 @@ public class HelloClientDemo {
       transport.open();
       String result = client.sayHello(username);
       System.out.println("Thrift client result = " + result);
+      transport.close();
     } catch (TTransportException e) {
       e.printStackTrace();
     } catch (TException e) {
