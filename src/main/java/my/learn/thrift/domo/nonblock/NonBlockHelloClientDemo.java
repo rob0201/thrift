@@ -9,11 +9,9 @@ import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 
+
 /**
- * Desc:
- * Author:zhangxiaowei03
- * Date: 15/9/29
- * Time: 下午4:34
+ *
  */
 public class NonBlockHelloClientDemo {
 

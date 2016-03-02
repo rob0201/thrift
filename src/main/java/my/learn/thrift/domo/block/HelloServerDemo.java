@@ -8,12 +8,7 @@ import org.apache.thrift.server.TThreadPoolServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TTransportException;
 
-/**
- * Desc:
- * Author:zhangxiaowei03
- * Date: 15/9/29
- * Time: 下午2:14
- */
+
 public class HelloServerDemo {
   public static final int SERVER_PORT = 8090;
 

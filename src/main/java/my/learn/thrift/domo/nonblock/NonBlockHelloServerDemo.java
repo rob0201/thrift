@@ -9,12 +9,6 @@ import org.apache.thrift.transport.TNonblockingServerSocket;
 import org.apache.thrift.transport.TNonblockingServerTransport;
 import org.apache.thrift.transport.TTransportException;
 
-/**
- * Desc:
- * Author:zhangxiaowei03
- * Date: 15/9/29
- * Time: 下午4:24
- */
 public class NonBlockHelloServerDemo {
 
 

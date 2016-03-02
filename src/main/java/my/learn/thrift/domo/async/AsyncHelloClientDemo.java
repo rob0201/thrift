@@ -10,12 +10,6 @@ import org.apache.thrift.transport.TNonblockingTransport;
 
 import java.io.IOException;
 
-/**
- * Desc:
- * Author:zhangxiaowei03
- * Date: 15/9/29
- * Time: 下午4:49
- */
 public class AsyncHelloClientDemo {
 
   public static void main(String[] args) {

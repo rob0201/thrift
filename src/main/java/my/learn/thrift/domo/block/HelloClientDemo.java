@@ -9,12 +9,6 @@ import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 
 
-/**
- * Desc:
- * Author:zhangxiaowei03
- * Date: 15/9/29
- * Time: 下午2:27
- */
 public class HelloClientDemo {
 
   public static final String SERVER_IP = "localhost";
