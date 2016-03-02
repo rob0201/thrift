@@ -18,7 +18,7 @@ public class HelloServerDemo {
   }
 
   public void startServer(){
-    System.out.println("Hello World Thrift Simple Server start ...");
+    System.out.println("Test thrift thread pool  Server start ...");
 
     try {
       //设置服务端口号
@@ -36,7 +36,5 @@ public class HelloServerDemo {
       System.out.println("Server start error !!!");
       e.printStackTrace();
     }
-
-
   }
 }

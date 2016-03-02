@@ -34,6 +34,6 @@ public class HelloClientDemo {
     } catch (TException e) {
       e.printStackTrace();
     }
-
   }
+
 }
